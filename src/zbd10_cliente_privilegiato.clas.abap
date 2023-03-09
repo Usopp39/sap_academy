@@ -1,0 +1,29 @@
+CLASS zbd10_cliente_privilegiato DEFINITION
+INHERITING FROM zbd10_cliente_abs
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    METHODS blocca REDEFINITION.
+    METHODS sblocca REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+
+ENDCLASS.
+
+
+
+CLASS ZBD10_CLIENTE_PRIVILEGIATO IMPLEMENTATION.
+
+
+  METHOD blocca.
+    ls_cliente-bloccato = 'X'.
+  ENDMETHOD.
+
+
+  METHOD sblocca.
+clear ls_cliente-bloccato.
+  ENDMETHOD.
+ENDCLASS.
